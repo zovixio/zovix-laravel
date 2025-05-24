@@ -29,11 +29,5 @@
                 "Zovix": "Zovix\\Zovix\\Facades\\Zovix"
             }
         }
-    },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/zovixio/zovix-laravel"
-        }
-    ]
+    }
 } 
