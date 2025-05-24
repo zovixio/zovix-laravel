@@ -7,7 +7,7 @@ A Laravel package for making HTTP requests to the Zovix API with API key authent
 You can install the package via composer:
 
 ```bash
-composer require zovixio/zovix-laravel:dev-main
+composer require zovix/zovix:dev-main
 ```
 
 After installing the package, publish the configuration file:
