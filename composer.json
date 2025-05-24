@@ -1,0 +1,39 @@
+{
+    "name": "zovix/zovix",
+    "description": "A Laravel package for making HTTP requests with API key authentication",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Zovix\\Zovix\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Zovix",
+            "email": "info@zovix.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.4|^8.0",
+        "illuminate/support": "^6.0|^7.0|^8.0|^9.0|^10.0|^11.0|^12.0",
+        "guzzlehttp/guzzle": "^6.5|^7.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Zovix\\Zovix\\ZovixServiceProvider"
+            ],
+            "aliases": {
+                "Zovix": "Zovix\\Zovix\\Facades\\Zovix"
+            }
+        }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/zovixio/zovix-laravel"
+        }
+    ]
+} 
