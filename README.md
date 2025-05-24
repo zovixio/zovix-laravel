@@ -1,1 +1,1 @@
-# zovix-laravel
+# zovix-laravel-package
