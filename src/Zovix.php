@@ -137,10 +137,11 @@ class Zovix
      * @param string $network
      * @param float $amount
      * @param string $toAddress
+     * @param string|null $memo
      * @return array
      * @throws GuzzleException
      */
-    public function withdrawal(string $currency, string $network, float $amount, string $toAddress): array
+    public function withdrawal(string $currency, string $network, float $amount, string $toAddress, ?string $memo = null): array
     {
         $data = [
             'currency' => $currency,
@@ -148,6 +149,9 @@ class Zovix
             'amount' => $amount,
             'to_address' => $toAddress
         ];
+        if ($memo !== null) {
+            $data['memo'] = $memo;
+        }
         return $this->post('/my-blockchain/withdrawal/create', $data);
     }
 
