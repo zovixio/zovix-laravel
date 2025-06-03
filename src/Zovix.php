@@ -105,6 +105,17 @@ class Zovix
     }
 
     /**
+     * Get list of available networks
+     *
+     * @return array
+     * @throws GuzzleException
+     */
+    public function getNetworks(): array
+    {
+        return $this->get('/my-blockchain/network/index');
+    }
+
+    /**
      * Get list of pending deposits
      *
      * @return array
