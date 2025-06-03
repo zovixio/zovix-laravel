@@ -56,6 +56,9 @@ $withdrawals = Zovix::getWithdrawals();
 // Get list of wallets
 $wallets = Zovix::getWallets();
 
+// Get list of available networks
+$networks = Zovix::getNetworks();
+
 // Submit a withdrawal
 $withdrawal = Zovix::withdrawal($currency, $network, $amount, $toAddress, $memo);
 ```
@@ -73,4 +76,4 @@ If you encounter any issues or have questions, please open an issue on GitHub.
 
 ## License
 
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information. 
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
