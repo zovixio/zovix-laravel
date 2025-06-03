@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static array getDeposits()
  * @method static array getWithdrawals()
  * @method static array getWallets()
+ * @method static array getNetworks()
  * @method static array getPendingDeposits()
  * @method static array verifyDeposit(string $transactionId)
  * @method static array withdrawal(string $currency, string $network, float $amount, string $toAddress, ?string $memo = null)
