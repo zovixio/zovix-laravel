@@ -44,14 +44,14 @@ $addresses = Zovix::getBlockchainAddressIndex($network);
 // Get list of deposits
 $deposits = Zovix::getDeposits();
 
+// Get list of withdrawals (optionally filter by unique_param)
+$withdrawals = Zovix::getWithdrawals($uniqueParam);
+
 // Get list of pending deposits
 $pendingDeposits = Zovix::getPendingDeposits();
 
 // Verify Deposit
 $verifyDeposit = Zovix::verifyDeposits($transactionId);
-
-// Get list of withdrawals
-$withdrawals = Zovix::getWithdrawals();
 
 // Get list of wallets
 $wallets = Zovix::getWallets();
@@ -59,8 +59,8 @@ $wallets = Zovix::getWallets();
 // Get list of available networks
 $networks = Zovix::getNetworks();
 
-// Submit a withdrawal
-$withdrawal = Zovix::withdrawal($currency, $network, $amount, $toAddress, $memo);
+// Submit a withdrawal (unique_param is required, memo is optional)
+$withdrawal = Zovix::withdrawal($currency, $network, $amount, $toAddress, $uniqueParam, $memo);
 ```
 
 ## Security
