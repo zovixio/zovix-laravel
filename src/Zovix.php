@@ -85,12 +85,17 @@ class Zovix
     /**
      * Get list of withdrawals
      *
+     * @param string|null $uniqueParam Filter withdrawals by unique_param
      * @return array
      * @throws GuzzleException
      */
-    public function getWithdrawals(): array
+    public function getWithdrawals(?string $uniqueParam = null): array
     {
-        return $this->get('/my-blockchain/withdrawal/index');
+        $query = [];
+        if ($uniqueParam !== null) {
+            $query['unique_param'] = $uniqueParam;
+        }
+        return $this->get('/my-blockchain/withdrawal/index', $query);
     }
 
     /**
@@ -148,17 +153,19 @@ class Zovix
      * @param string $network
      * @param float $amount
      * @param string $toAddress
+     * @param string $uniqueParam
      * @param string|null $memo
      * @return array
      * @throws GuzzleException
      */
-    public function withdrawal(string $currency, string $network, float $amount, string $toAddress, ?string $memo = null): array
+    public function withdrawal(string $currency, string $network, float $amount, string $toAddress, string $uniqueParam, ?string $memo = null): array
     {
         $data = [
             'currency' => $currency,
             'network' => $network,
             'amount' => $amount,
-            'to_address' => $toAddress
+            'to_address' => $toAddress,
+            'unique_param' => $uniqueParam
         ];
         if ($memo !== null) {
             $data['memo'] = $memo;
